@@ -24,7 +24,7 @@ def sendnotice(meta_data):
     else:
         go.send(meta_data, '[CQ:face,id=151] 发送公告失败了，qwq')
         
-def muteall(meta_data, iff='true'):
+def muteall(meta_data, iff=1):
     uid = meta_data.get('se').get('user_id')
     gid = meta_data.get('se').get('group_id')
     mode = meta_data.get('message')
@@ -35,7 +35,7 @@ def muteall(meta_data, iff='true'):
         message = '[CQ:face,id=161] 执行成功！'
     else:
         message = '[CQ:face,id=151] 执行失败！'
-    if iff == 'true':
+    if iff:
         go.send(meta_data, message)
 
 def mute(meta_data):
